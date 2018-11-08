@@ -1,0 +1,10 @@
+F:\Documents\Programming\DankusTree\DankusTree\bin\Debug\DankusTree.exe.config
+F:\Documents\Programming\DankusTree\DankusTree\bin\Debug\DankusTree.exe
+F:\Documents\Programming\DankusTree\DankusTree\bin\Debug\DankusTree.pdb
+F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.csprojAssemblyReference.cache
+F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.Form1.resources
+F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.Properties.Resources.resources
+F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.csproj.GenerateResource.cache
+F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.csproj.CoreCompileInputs.cache
+F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.exe
+F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.pdb
