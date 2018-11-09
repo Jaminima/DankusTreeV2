@@ -47,6 +47,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.Timer_Lights = new System.Windows.Forms.Timer(this.components);
+            this.Timer_Snow = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,6 +187,12 @@
             this.Timer_Lights.Interval = 250;
             this.Timer_Lights.Tick += new System.EventHandler(this.Timer_Lights_Tick);
             // 
+            // Timer_Snow
+            // 
+            this.Timer_Snow.Enabled = true;
+            this.Timer_Snow.Interval = 50;
+            this.Timer_Snow.Tick += new System.EventHandler(this.Timer_Snow_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +243,7 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Timer Timer_Lights;
+        private System.Windows.Forms.Timer Timer_Snow;
     }
 }
 

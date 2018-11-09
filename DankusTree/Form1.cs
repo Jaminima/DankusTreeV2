@@ -19,7 +19,16 @@ namespace DankusTree
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            int i = 0;
+            this.TopMost = true;
+            foreach (Control Control in this.Controls)
+            {
+                if (Control.GetType() == new Panel().GetType())
+                {
+                    Control.Name = "Light" + i;
+                    i++;
+                }
+            }
         }
 
         private void Timer_Time_Tick(object sender, EventArgs e)
@@ -40,9 +49,37 @@ namespace DankusTree
         {
             foreach (Control Control in this.Controls)
             {
-                if (Control.GetType()==new Panel().GetType())
+                if (Control.Name.StartsWith("Light"))
                 {
                     Control.BackColor = Colors[Rnd.Next(0, Colors.Length)];
+                }
+            }
+        }
+
+        int Snows = 0;
+        private void Timer_Snow_Tick(object sender, EventArgs e)
+        {
+            if (Rnd.Next(0, 15) == 1)
+            {
+                Panel NewSnow = new Panel();
+                NewSnow.BackColor = Color.White;
+                NewSnow.Name = "Snow"+Snows;
+                NewSnow.Height = 15;
+                NewSnow.Width = 15;
+                NewSnow.Location = new Point(Rnd.Next(0, this.pictureBox1.Width),-15);
+                NewSnow.BringToFront();
+                this.pictureBox1.Controls.Add(NewSnow);
+                Snows++;
+            }
+            foreach (Control Control in this.pictureBox1.Controls)
+            {
+                if (Control.Name.StartsWith("Snow"))
+                {
+                    if (Control.Location.Y > this.pictureBox1.Height) {
+                        this.pictureBox1.Controls.Remove(Control);
+                    }
+                    Control.Location = new Point(Rnd.Next(-1, 2) + Control.Location.X, Control.Location.Y + 1);
+                    Control.BringToFront();
                 }
             }
         }
