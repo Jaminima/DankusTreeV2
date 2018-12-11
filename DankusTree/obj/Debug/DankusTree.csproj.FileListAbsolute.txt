@@ -8,3 +8,13 @@ F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.csproj.Gener
 F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.csproj.CoreCompileInputs.cache
 F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.exe
 F:\Documents\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.pdb
+D:\Programming\DankusTree\DankusTree\bin\Debug\DankusTree.exe.config
+D:\Programming\DankusTree\DankusTree\bin\Debug\DankusTree.exe
+D:\Programming\DankusTree\DankusTree\bin\Debug\DankusTree.pdb
+D:\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.Form1.resources
+D:\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.Properties.Resources.resources
+D:\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.csproj.GenerateResource.Cache
+D:\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.exe
+D:\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.pdb
+D:\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.csprojAssemblyReference.cache
+D:\Programming\DankusTree\DankusTree\obj\Debug\DankusTree.csproj.CoreCompileInputs.cache

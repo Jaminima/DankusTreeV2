@@ -23,7 +23,7 @@ namespace DankusTree
             this.TopMost = true;
             foreach (Control Control in this.Controls)
             {
-                if (Control.GetType() == new Panel().GetType())
+                if (Control.GetType() == new Panel().GetType() && Control.Name!= "panel_snowpile")
                 {
                     Control.Name = "Light" + i;
                     i++;
@@ -56,7 +56,8 @@ namespace DankusTree
             }
         }
 
-        int Snows = 0;
+        UInt64 Snows = 0;
+        int SnowMod = 0;
         private void Timer_Snow_Tick(object sender, EventArgs e)
         {
             if (Rnd.Next(0, 15) == 1)
@@ -75,8 +76,15 @@ namespace DankusTree
             {
                 if (Control.Name.StartsWith("Snow"))
                 {
-                    if (Control.Location.Y > this.pictureBox1.Height) {
+                    if (Control.Location.Y > this.panel_snowpile.Location.Y) {
+                        if (SnowMod % 4 == 0)
+                        {
+                            this.panel_snowpile.Height += 1;
+                            this.panel_snowpile.Location = new Point(0, this.panel_snowpile.Location.Y - 1);
+                            SnowMod = 0;
+                        }
                         this.pictureBox1.Controls.Remove(Control);
+                        SnowMod++;
                     }
                     Control.Location = new Point(Rnd.Next(-1, 2) + Control.Location.X, Control.Location.Y + 1);
                     Control.BringToFront();

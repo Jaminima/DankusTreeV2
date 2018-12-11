@@ -48,6 +48,7 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.Timer_Lights = new System.Windows.Forms.Timer(this.components);
             this.Timer_Snow = new System.Windows.Forms.Timer(this.components);
+            this.panel_snowpile = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,9 +66,9 @@
             // 
             this.Label_Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Time.Location = new System.Drawing.Point(0, 499);
+            this.Label_Time.Location = new System.Drawing.Point(0, 496);
             this.Label_Time.Name = "Label_Time";
-            this.Label_Time.Size = new System.Drawing.Size(416, 53);
+            this.Label_Time.Size = new System.Drawing.Size(416, 31);
             this.Label_Time.TabIndex = 1;
             this.Label_Time.Text = "Label_time";
             this.Label_Time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,12 +194,21 @@
             this.Timer_Snow.Interval = 50;
             this.Timer_Snow.Tick += new System.EventHandler(this.Timer_Snow_Tick);
             // 
+            // panel_snowpile
+            // 
+            this.panel_snowpile.BackColor = System.Drawing.Color.White;
+            this.panel_snowpile.Location = new System.Drawing.Point(0, 496);
+            this.panel_snowpile.Name = "panel_snowpile";
+            this.panel_snowpile.Size = new System.Drawing.Size(416, 0);
+            this.panel_snowpile.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(416, 561);
+            this.ClientSize = new System.Drawing.Size(416, 528);
+            this.Controls.Add(this.panel_snowpile);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel11);
@@ -244,6 +254,7 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Timer Timer_Lights;
         private System.Windows.Forms.Timer Timer_Snow;
+        private System.Windows.Forms.Panel panel_snowpile;
     }
 }
 
