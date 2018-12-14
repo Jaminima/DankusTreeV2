@@ -35,11 +35,14 @@ namespace DankusTree
         {
             TimeSpan TSpan = (TimeSpan)(new DateTime(DateTime.Now.Year,12,25,0,0,0) - DateTime.Now);
             string SSpan = "";
-            if (Math.Floor(TSpan.TotalDays) != 0) { SSpan += Math.Floor(TSpan.TotalDays) + " Days "; }
-            if (TSpan.Hours != 0) { SSpan += TSpan.Hours + " Hours "; }
-            if (TSpan.Minutes != 0) { SSpan += TSpan.Minutes + " Mins "; }
-            if (SSpan != "") { SSpan += "And "; }
-            SSpan += TSpan.Seconds + " Secs ";
+            if (Math.Floor(TSpan.TotalDays) != 0) { if (Math.Floor(TSpan.TotalDays) != 1) { SSpan += Math.Floor(TSpan.TotalDays) + " Days "; } else { SSpan += Math.Floor(TSpan.TotalDays) + " Day "; } }
+            if (TSpan.Hours != 0) { if (TSpan.Hours != 1) { SSpan += TSpan.Hours + " Hours "; } else { SSpan += TSpan.Hours + " Hour "; } }
+            if (TSpan.Minutes != 0) { if (TSpan.Minutes != 1) { SSpan += TSpan.Minutes + " Mins "; } else { SSpan += TSpan.Minutes + " Min "; } }
+            if (TSpan.Seconds != 0)
+            {
+                if (SSpan != "") { SSpan += "And "; }
+                if (TSpan.Seconds != 1) { SSpan += TSpan.Seconds + " Secs "; } else { SSpan += TSpan.Seconds + " Sec "; }
+            }
             Label_Time.Text = SSpan;
         }
 
@@ -58,9 +61,11 @@ namespace DankusTree
 
         UInt64 Snows = 0;
         int SnowMod = 0;
+        bool SnowDraining = false;
+
         private void Timer_Snow_Tick(object sender, EventArgs e)
         {
-            if (Rnd.Next(0, 15) == 1)
+            if (Rnd.Next(0, 15) == 1 && !SnowDraining)
             {
                 Panel NewSnow = new Panel();
                 NewSnow.BackColor = Color.White;
@@ -81,6 +86,13 @@ namespace DankusTree
                         {
                             this.panel_snowpile.Height += 1;
                             this.panel_snowpile.Location = new Point(0, this.panel_snowpile.Location.Y - 1);
+                            if (this.panel_snowpile.Location.Y <= 0)
+                            {
+                                SnowDraining = true;
+                                this.Timer_Snow.Interval = 200;
+                                //this.panel_snowpile.Height = 0;
+                                //this.panel_snowpile.Location = new Point(0, this.pictureBox1.Height);
+                            }
                             SnowMod = 0;
                         }
                         this.pictureBox1.Controls.Remove(Control);
@@ -89,6 +101,12 @@ namespace DankusTree
                     Control.Location = new Point(Rnd.Next(-1, 2) + Control.Location.X, Control.Location.Y + 1);
                     Control.BringToFront();
                 }
+            }
+            if (SnowDraining)
+            {
+                this.panel_snowpile.Height -= 1;
+                this.panel_snowpile.Location = new Point(0, this.pictureBox1.Height - this.panel_snowpile.Height);
+                if (this.panel_snowpile.Height == 0) { SnowDraining = false; this.Timer_Snow.Interval = 50; }
             }
         }
     }
